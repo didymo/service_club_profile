@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains service_club_profile.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function service_club_profile_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the service_club_profile module.
+    case 'help.page.service_club_profile':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module provides functionality to store personal information and display it as either private or public.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function service_club_profile_theme() {
+  return [
+    'service_club_profile' => [
+      'render element' => 'children',
+    ],
+  ];
+}

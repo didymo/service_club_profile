@@ -1,0 +1,14 @@
+{
+  "name": "drupal/service_club_profile",
+  "type": "drupal-module",
+  "description": "This module provides functionality to store personal information and display it as either private or public.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/service_club_profile",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/service_club_profile",
+    "source": "http://cgit.drupalcode.org/service_club_profile"
+  },
+  "require": { }
+}
