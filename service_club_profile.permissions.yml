@@ -1,0 +1,30 @@
+add member profile entity entities:
+  title: 'Create new Member profile entity entities'
+
+administer member profile entity entities:
+  title: 'Administer Member profile entity entities'
+  description: 'Allow to access the administration form to configure Member profile entity entities.'
+  restrict access: true
+
+delete member profile entity entities:
+  title: 'Delete Member profile entity entities'
+
+edit member profile entity entities:
+  title: 'Edit Member profile entity entities'
+
+view published member profile entity entities:
+  title: 'View published Member profile entity entities'
+
+view unpublished member profile entity entities:
+  title: 'View unpublished Member profile entity entities'
+
+view all member profile entity revisions:
+  title: 'View all Member profile entity revisions'
+
+revert all member profile entity revisions:
+  title: 'Revert all Member profile entity revisions'
+  description: 'Role requires permission <em>view Member profile entity revisions</em> and <em>edit rights</em> for member profile entity entities in question or <em>administer member profile entity entities</em>.'
+
+delete all member profile entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Member profile entity revisions</em> and <em>delete rights</em> for member profile entity entities in question or <em>administer member profile entity entities</em>.'

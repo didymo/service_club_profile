@@ -1,0 +1,14 @@
+
+# Member profile entity menu items definition
+entity.member_profile_entity.collection:
+  title: 'Member profile entity list'
+  route_name: entity.member_profile_entity.collection
+  description: 'List Member profile entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+member_profile_entity.admin.structure.settings:
+  title: 'Member profile entity settings'
+  description: 'Configure Member profile entity entities'
+  route_name: member_profile_entity.settings
+  parent: system.admin_structure

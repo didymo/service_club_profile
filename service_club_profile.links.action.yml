@@ -1,0 +1,5 @@
+entity.member_profile_entity.add_form:
+  route_name: entity.member_profile_entity.add_form
+  title: 'Add Member profile entity'
+  appears_on:
+    - entity.member_profile_entity.collection
