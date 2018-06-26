@@ -246,28 +246,6 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['memberNum'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Member Number'))
-      ->setDescription(t('The member number of the Member Profile Entity.'))
-      ->setRevisionable(TRUE)
-      ->setSettings([
-        'max_length' => 50,
-        'text_processing' => 0,
-      ])
-      ->setDefaultValue('')
-      ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'string',
-        'weight' => 2,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => 2,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
-
     $fields['email'] = BaseFieldDefinition::create('email')
       ->setLabel(t('Email Address'))
       ->setDescription(t('The email of the Member Profile Entity.'))
@@ -285,6 +263,28 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
         'weight' => 1,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
+
+    $fields['memberNum'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Member Number'))
+      ->setDescription(t('The member number of the Member Profile Entity.'))
+      ->setRevisionable(TRUE)
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => 2,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 2,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
