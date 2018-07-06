@@ -1,5 +1,5 @@
 {
-  "name": "drupal/service_club_profile",
+  "name": "didymo/service_club_profile",
   "type": "drupal-module",
   "description": "This module provides functionality to store personal information and display it as either private or public.",
   "keywords": ["Drupal"],

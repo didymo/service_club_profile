@@ -111,8 +111,8 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       }
     }
 
-    // If no revision author has been set explicitly, make the member_profile_entity owner the
-    // revision author.
+    // If no revision author has been set explicitly, make the
+    // member_profile_entity owner the revision author.
     if (!$this->getRevisionUser()) {
       $this->setRevisionUserId($this->getOwnerId());
     }
@@ -268,7 +268,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['memberNum'] = BaseFieldDefinition::create('string')
+    $fields['member_number'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Member Number'))
       ->setDescription(t('The member number of the Member Profile Entity.'))
       ->setRevisionable(TRUE)
@@ -290,19 +290,19 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['birthDate'] = BaseFieldDefinition::create('datetime')
+    $fields['birth_date'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Date of Birth'))
       ->setDescription(t('The birthdate of the Member Profile Entity.'))
       ->setRevisionable(TRUE)
       ->setSettings([
-          'datetime_type' => 'date'
+        'datetime_type' => 'date',
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'datetime_default',
         'settings' => [
-          'format_type' => 'medium',
+          'format_type' => 'html_date',
         ],
         'weight' => 3,
       ])
@@ -314,7 +314,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['image'] = BaseFieldDefinition::create('image')
+    $fields['profile_picture'] = BaseFieldDefinition::create('image')
       ->setLabel(t('Profile Picture'))
       ->setDescription(t('The profile picture of the Member Profile Entity.'))
       ->setSettings([
@@ -323,12 +323,12 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
         'file_extensions' => 'png jpg jpeg',
       ])
       ->setDisplayOptions('view', array(
-        'label' => 'hidden',
+        'label' => 'above',
         'type' => 'default',
         'weight' => 4,
       ))
       ->setDisplayOptions('form', array(
-        'label' => 'hidden',
+        'label' => 'above',
         'type' => 'image_image',
         'weight' => 4,
       ))
