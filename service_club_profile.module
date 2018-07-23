@@ -45,7 +45,7 @@ function service_club_profile_user_insert(EntityInterface $entity) {
     'type' => 'member_profile_entity',
     'name' => 'Testy Test',
     'email' => $entity->getEmail(),
-    'userName' => $entity->getUsername(),
+    'user_name' => $entity->getUsername(),
     'langcode' => 'en',
   )
   );

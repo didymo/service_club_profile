@@ -246,7 +246,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['userName'] = BaseFieldDefinition::create('string')
+    $fields['user_name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('UserName'))
       ->setDescription(t('The UserName of the Member Profile Entity.'))
       ->setRevisionable(TRUE)
