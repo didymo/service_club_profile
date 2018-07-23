@@ -5,7 +5,10 @@
  * Contains service_club_profile.module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\service_club_profile\Entity\MemberProfileEntity;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
@@ -32,4 +35,19 @@ function service_club_profile_theme() {
       'render element' => 'children',
     ],
   ];
+}
+
+/**
+ * A hook for the creation of users.
+ */
+function service_club_profile_user_insert(EntityInterface $entity) {
+  $myProfile = MemberProfileEntity::create(array(
+    'type' => 'member_profile_entity',
+    'name' => 'Testy Test',
+    'email' => $entity->getEmail(),
+    'userName' => $entity->getUsername(),
+    'langcode' => 'en',
+  )
+  );
+  $myProfile->save();
 }
