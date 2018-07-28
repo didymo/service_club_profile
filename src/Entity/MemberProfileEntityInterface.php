@@ -96,7 +96,7 @@ interface MemberProfileEntityInterface extends ContentEntityInterface, RevisionL
   public function setMemberNumber($member_number);
 
   /**
-   * Gets the Member profile entity birth_date.
+   * Gets the Member profile entity birth_date, in the format yyyy-mm-dd.
    *
    * @return string
    *   birth_date of the Member profile entity;
@@ -104,7 +104,7 @@ interface MemberProfileEntityInterface extends ContentEntityInterface, RevisionL
   public function getDateOfBirth();
 
   /**
-   * Sets the Member profile entity birth_date.
+   * Sets the Member profile entity birth_date, in the format yyyy-mm-dd.
    *
    * @param string $birth_date
    *   The Member profile entity birth_date.

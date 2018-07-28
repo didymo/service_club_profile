@@ -38,13 +38,13 @@ function service_club_profile_theme() {
 }
 
 /**
- * A hook for the creation of users.
+ * A hook for the creation of Profile Entities.
  */
-function service_club_profile_user_insert(EntityInterface $entity) {
+function service_club_profile_user_insert(EntityInterface $newUser) {
   $myProfile = MemberProfileEntity::create();
-  $myProfile->setEmail($entity->getEmail());
-  $myProfile->setUserName($entity->getUsername());
+  $myProfile->setUserName($newUser->getUsername());
+  $myProfile->setEmail($newUser->getEmail());
   $myProfile->set('langcode', 'en');
-  $myProfile->set('user_id', $entity->id());
+  $myProfile->set('user_id', $newUser->id());
   $myProfile->save();
 }
