@@ -136,6 +136,81 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
   /**
    * {@inheritdoc}
    */
+  public function getUserName() {
+    return $this->get('user_name')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUserName($user_name) {
+    $this->set('user_name', $user_name);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getEmail() {
+    return $this->get('email')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setEmail($email) {
+    $this->set('email', $email);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getMemberNumber() {
+    return $this->get('member_number')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setMemberNumber($member_number) {
+    $this->set('member_number', $member_number);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getDateOfBirth() {
+    return $this->get('birth_date')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setDateOfBirth($birth_date) {
+    $this->set('birth_date', $birth_date);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getProfilePicture() {
+    return $this->get('profile_picture')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setProfilePicture($profile_picture) {
+    $this->set('profile_picture', $profile_picture);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getCreatedTime() {
     return $this->get('created')->value;
   }
@@ -225,8 +300,8 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Full Name'))
-      ->setDescription(t('The full name of the Member Profile Entity.'))
+      ->setLabel(t('Name'))
+      ->setDescription(t('The name of the Member Profile Entity.'))
       ->setRevisionable(TRUE)
       ->setSettings([
         'max_length' => 50,
