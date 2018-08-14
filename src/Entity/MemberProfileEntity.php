@@ -197,7 +197,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
    * {@inheritdoc}
    */
   public function getProfilePicture() {
-    return $this->get('profile_picture')->value;
+    return $this->get('profile_picture')->target_id;
   }
 
   /**

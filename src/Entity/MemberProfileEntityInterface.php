@@ -6,6 +6,7 @@ use Drupal\Core\Datetime\Entity\DateFormat;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
+use Drupal\Core\Image\Image;
 use Drupal\Core\Render\Element\Date;
 use Drupal\datetime\Plugin\views\argument\FullDate;
 use Drupal\user\EntityOwnerInterface;
