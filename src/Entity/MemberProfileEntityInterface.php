@@ -135,6 +135,46 @@ interface MemberProfileEntityInterface extends ContentEntityInterface, RevisionL
   public function setProfilePicture($profile_picture);
 
   /**
+   * Gets the Member profile entity name boolean.
+   *
+   * @return int
+   *   Name boolean of the Member profile entity.
+   */
+  public function getNameBool();
+
+  /**
+   * Gets the Member profile entity UserName boolean.
+   *
+   * @return int
+   *   UserName boolean of the Member profile entity.
+   */
+  public function getUserNameBool();
+
+  /**
+   * Gets the Member profile entity Email boolean.
+   *
+   * @return int
+   *   Email boolean of the Member profile entity.
+   */
+  public function getEmailBool();
+
+  /**
+   * Gets the Member profile entity MemberNumber boolean.
+   *
+   * @return int
+   *   MemberNumber boolean of the Member profile entity.
+   */
+  public function getMemberNumberBool();
+
+  /**
+   * Gets the Member profile entity BirthDate boolean.
+   *
+   * @return int
+   *   BirthDate boolean of the Member profile entity.
+   */
+  public function getBirthDateBool();
+
+  /**
    * Gets the Member profile entity creation timestamp.
    *
    * @return int

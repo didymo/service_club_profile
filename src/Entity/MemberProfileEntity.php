@@ -2,6 +2,7 @@
 
 namespace Drupal\service_club_profile\Entity;
 
+use Drupal\Component\Utility\Number;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\RevisionableContentEntityBase;
@@ -211,6 +212,41 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
   /**
    * {@inheritdoc}
    */
+  public function getNameBool() {
+    return $this->get('name_box')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getUserNameBool() {
+    return $this->get('user_name_box')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getEmailBool() {
+    return $this->get('email_box')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getMemberNumberBool() {
+    return $this->get('member_number_box')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getBirthDateBool() {
+    return $this->get('birth_date_box')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getCreatedTime() {
     return $this->get('created')->value;
   }
@@ -233,6 +269,14 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
   /**
    * {@inheritdoc}
    */
+  public function setOwner(UserInterface $account) {
+    $this->set('user_id', $account->id());
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getOwnerId() {
     return $this->get('user_id')->target_id;
   }
@@ -242,14 +286,6 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
    */
   public function setOwnerId($uid) {
     $this->set('user_id', $uid);
-    return $this;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function setOwner(UserInterface $account) {
-    $this->set('user_id', $account->id());
     return $this;
   }
 
@@ -288,7 +324,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
+        'weight' => 7,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
@@ -321,6 +357,16 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
+    $fields['name_box'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Public'))
+      ->setDescription(t('Toggle Public Display'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 1,
+      ]);
+
     $fields['user_name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('UserName'))
       ->setDescription(t('The UserName of the Member Profile Entity.'))
@@ -342,6 +388,16 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+    $fields['user_name_box'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Public'))
+      ->setDescription(t('Toggle Public Display'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 2,
+      ]);
 
     $fields['email'] = BaseFieldDefinition::create('email')
       ->setLabel(t('Email Address'))
@@ -365,6 +421,16 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
+    $fields['email_box'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Public'))
+      ->setDescription(t('Toggle Public Display'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 3,
+      ]);
+
     $fields['member_number'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Member Number'))
       ->setDescription(t('The member number of the Member Profile Entity.'))
@@ -386,6 +452,16 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+    $fields['member_number_box'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Public'))
+      ->setDescription(t('Toggle Public Display'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 4,
+      ]);
 
     $fields['birth_date'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Date of Birth'))
@@ -410,6 +486,16 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+    $fields['birth_date_box'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Public'))
+      ->setDescription(t('Toggle Public Display'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'weight' => 5,
+      ]);
 
     $fields['profile_picture'] = BaseFieldDefinition::create('image')
       ->setLabel(t('Profile Picture'))
