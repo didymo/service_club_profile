@@ -3,3 +3,5 @@ type: module
 description: 'This module provides functionality to store personal information and display it as either private or public.'
 core: 8.x
 package: 'Service Club'
+dependencies:
+  - views_conditional
