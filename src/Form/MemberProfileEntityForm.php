@@ -2,8 +2,12 @@
 
 namespace Drupal\service_club_profile\Form;
 
+use Drupal\Core\Access\AccessException;
+use Drupal\Core\Database\DatabaseAccessDeniedException;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Drupal\user\Entity\User;
 
 /**
  * Form controller for Member profile entity edit forms.
@@ -18,7 +22,6 @@ class MemberProfileEntityForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var $entity \Drupal\service_club_profile\Entity\MemberProfileEntity */
     $form = parent::buildForm($form, $form_state);
-
     if (!$this->entity->isNew()) {
       $form['new_revision'] = [
         '#type' => 'checkbox',
@@ -27,10 +30,14 @@ class MemberProfileEntityForm extends ContentEntityForm {
         '#weight' => 10,
       ];
     }
-
     $entity = $this->entity;
-
-    return $form;
+    $user = User::load($this->currentUser()->id());
+    if ($this->currentUser()->id() === $entity->getOwnerId() || $user->hasRole('administrator')) {
+      return $form;
+    }
+    else {
+      throw new AccessDeniedHttpException();
+    }
   }
 
   /**
