@@ -358,7 +358,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setRequired(TRUE);
 
     $fields['name_box'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('NamePublic'))
+      ->setLabel(t('Display Name Publicly'))
       ->setDescription(t('Toggle Public Display'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(FALSE)
@@ -390,7 +390,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setRequired(TRUE);
 
     $fields['user_name_box'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('UserPublic'))
+      ->setLabel(t('Display User Name Publicly'))
       ->setDescription(t('Toggle Public Display'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(FALSE)
@@ -422,7 +422,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setRequired(TRUE);
 
     $fields['email_box'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('EmailPublic'))
+      ->setLabel(t('Display Email Publicly'))
       ->setDescription(t('Toggle Public Display'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(FALSE)
@@ -454,7 +454,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setRequired(TRUE);
 
     $fields['member_number_box'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('MemPublic'))
+      ->setLabel(t('Display Member Number Publicly'))
       ->setDescription(t('Toggle Public Display'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(FALSE)
@@ -488,7 +488,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setRequired(TRUE);
 
     $fields['birth_date_box'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('BirthPublic'))
+      ->setLabel(t('Display Birthday Publicly'))
       ->setDescription(t('Toggle Public Display'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(FALSE)
