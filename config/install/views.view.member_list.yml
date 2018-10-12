@@ -8,7 +8,7 @@ dependencies:
     - service_club_profile
     - views_conditional
 _core:
-  default_config_hash: pjXXeMJKNgWe3ukGvZNwI5K7yF9CycjVuLYaFnCUmxg
+  default_config_hash: urMrX58wmBZ9uSYeStRVmCmozxeQZuRZs8fglI46MQ4
 id: member_list
 label: 'Member List'
 module: views
@@ -783,7 +783,7 @@ display:
           condition: '1'
           equalto: '1'
           then: '{{ name }}'
-          or: Private
+          or: ''
           strip_tags: 0
           plugin_id: views_conditional_field
         views_conditional_field_1:
@@ -838,7 +838,7 @@ display:
           condition: '1'
           equalto: '1'
           then: '{{ user_name }}'
-          or: Private
+          or: ''
           strip_tags: 0
           plugin_id: views_conditional_field
         views_conditional_field_2:
@@ -893,7 +893,7 @@ display:
           condition: '1'
           equalto: '1'
           then: '{{ email }}'
-          or: Private
+          or: ''
           strip_tags: 0
           plugin_id: views_conditional_field
         views_conditional_field_3:
@@ -948,7 +948,7 @@ display:
           condition: '1'
           equalto: '1'
           then: '{{ member_number }}'
-          or: Private
+          or: ''
           strip_tags: 0
           plugin_id: views_conditional_field
         views_conditional_field_4:
@@ -1003,11 +1003,248 @@ display:
           condition: '1'
           equalto: '1'
           then: '{{ birth_date }}'
-          or: Private
+          or: ''
           strip_tags: 0
           plugin_id: views_conditional_field
-      filters: {  }
-      sorts: {  }
+      filters:
+        name:
+          id: name
+          table: member_profile_entity_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: member_profile_entity
+          entity_field: name
+          plugin_id: string
+        user_name:
+          id: user_name
+          table: member_profile_entity_field_data
+          field: user_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: member_profile_entity
+          entity_field: user_name
+          plugin_id: string
+        email:
+          id: email
+          table: member_profile_entity_field_data
+          field: email
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: member_profile_entity
+          entity_field: email
+          plugin_id: string
+        member_number:
+          id: member_number
+          table: member_profile_entity_field_data
+          field: member_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: member_profile_entity
+          entity_field: member_number
+          plugin_id: string
+        birth_date:
+          id: birth_date
+          table: member_profile_entity_field_data
+          field: birth_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: member_profile_entity
+          entity_field: birth_date
+          plugin_id: string
+      sorts:
+        name:
+          id: name
+          table: member_profile_entity_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Name
+          entity_type: member_profile_entity
+          entity_field: name
+          plugin_id: standard
+        user_name:
+          id: user_name
+          table: member_profile_entity_field_data
+          field: user_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'User Name'
+          entity_type: member_profile_entity
+          entity_field: user_name
+          plugin_id: standard
+        member_number:
+          id: member_number
+          table: member_profile_entity_field_data
+          field: member_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Member Number'
+          entity_type: member_profile_entity
+          entity_field: member_number
+          plugin_id: standard
       title: 'Member List'
       header: {  }
       footer: {  }
@@ -1021,6 +1258,8 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
       tags: {  }
   page_1:
     display_plugin: page
@@ -1040,4 +1279,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
       tags: {  }
