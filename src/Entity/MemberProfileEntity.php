@@ -436,7 +436,7 @@ class MemberProfileEntity extends RevisionableContentEntityBase implements Membe
       ->setDescription(t('The member number of the Member Profile Entity.'))
       ->setRevisionable(TRUE)
       ->setSettings([
-        'max_length' => 8,
+        'max_length' => 16,
         'text_processing' => 0,
       ])
       ->setDefaultValue('')
